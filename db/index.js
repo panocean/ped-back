@@ -12,8 +12,6 @@ const mongoURI =
     : "mongodb://localhost:27017/peddev";
     // : process.env.MONGO_URI_DEV;
 
-    // : "mongodb://localhost:27017/devdb";
-
 //create connection
 mongoose
   .connect(mongoURI, {

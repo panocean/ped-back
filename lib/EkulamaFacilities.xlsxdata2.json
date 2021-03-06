@@ -1,0 +1,104 @@
+[
+  {
+    "flowline": "Well 2T",
+    "location": "awoba",
+    "design_life_span": 15,
+    "year_Installed_or_replaced": 2012,
+    "years_installed_or_laid": 8,
+    "planned_replacement_period": "Replace 2024",
+    "latest_replacement_date": 2027,
+    "preventive_maintenace_plan": "\n\n1. Carry out 3 yearly UT (in plot/on plot piping) inspection of our flow lines and manifold piping's.\n2. Increase ROW Surveillance."
+  },
+  {
+    "flowline": "Well 3L",
+    "location": "awoba",
+    "design_life_span": 15,
+    "year_Installed_or_replaced": 2011,
+    "years_installed_or_laid": 9,
+    "planned_replacement_period": "Replace 2023",
+    "latest_replacement_date": 2026,
+    "preventive_maintenace_plan": "\n\n1. Carry out 3 yearly UT (in plot/on plot piping) inspection of our flow lines and manifold piping's.\n2. Increase ROW Surveillance.",
+    "remarks": "O/U 31/10/2015"
+  },
+  {
+    "flowline": "Well 3S",
+    "location": "awoba",
+    "design_life_span": 15,
+    "year_Installed_or_replaced": 2011,
+    "years_installed_or_laid": 9,
+    "planned_replacement_period": "Replace by 2023",
+    "latest_replacement_date": 2026,
+    "preventive_maintenace_plan": "\n\n1. Carry out 3 yearly UT (in plot/on plot piping) inspection of our flow lines and manifold piping's.\n2. Increase ROW Surveillance.",
+    "remarks": "O/U 31/10/2016"
+  },
+  {
+    "flowline": "Well 6L",
+    "location": "awoba",
+    "design_life_span": 15,
+    "year_Installed_or_replaced": "1991/2016",
+    "years_installed_or_laid": 5,
+    "planned_replacement_period": "Replace by 2029",
+    "latest_replacement_date": 2031,
+    "preventive_maintenace_plan": "None OK",
+    "remarks": "First line was laid in 1991 and replaced 2016"
+  },
+  {
+    "flowline": "Well 7L",
+    "location": "awoba",
+    "design_life_span": 15,
+    "year_Installed_or_replaced": 1990,
+    "years_installed_or_laid": 30,
+    "planned_replacement_period": "Replace Now",
+    "latest_replacement_date": 2005,
+    "complete_system_failure_indicator": "Flowline Expired",
+    "preventive_maintenace_plan": "1. Complete replacement Now.                                     2.  Increase ROW Surveillance\n",
+    "remarks": "4 nos Clamps at different sections already done"
+  },
+  {
+    "flowline": "Well 7S",
+    "location": "awoba",
+    "design_life_span": 15,
+    "year_Installed_or_replaced": 2009,
+    "years_installed_or_laid": 11,
+    "planned_replacement_period": "Replace by 2021",
+    "latest_replacement_date": 2024,
+    "complete_system_failure_indicator": "Flowline at Risk",
+    "preventive_maintenace_plan": "1. Complete replacement Now.\n2.  Increase ROW Surveillance",
+    "remarks": "7 nos of Clamps at different sections already carried out.Shelf life not expired but susceptible"
+  },
+  {
+    "flowline": "Well 8T",
+    "location": "awoba",
+    "design_life_span": 15,
+    "year_Installed_or_replaced": 2011,
+    "years_installed_or_laid": 9,
+    "planned_replacement_period": "Replace by 2026",
+    "latest_replacement_date": 2026,
+    "preventive_maintenace_plan": "\n\n1. Carry out 3 yearly UT (in plot/on plot piping) inspection of our flow lines and manifold piping's.\n2. Increase ROW Surveillance."
+  },
+  {
+    "flowline": "Well 9S",
+    "location": "awoba",
+    "design_life_span": 15,
+    "year_Installed_or_replaced": "1991/2016",
+    "years_installed_or_laid": 5,
+    "planned_replacement_period": "Replace by 2029",
+    "latest_replacement_date": 2031,
+    "preventive_maintenace_plan": "\n\n1. Carry out 3 yearly UT (in plot/on plot piping) inspection of our flow lines and manifold piping's.\n2. Increase ROW Surveillance.",
+    "remarks": "Flowline was replaced in 2016"
+  },
+  {
+    "flowline": "6\" delivery Line (old)",
+    "location": "awoba",
+    "complete_system_failure_indicator": "Flowline at Risk",
+    "preventive_maintenace_plan": "1. Carry out integrity test to determine line condition    2. Replace line based on test result.                              3.  Increase ROW Surveillance           ",
+    "remarks": "Clampping @ ROW in 2017 and 2020"
+  },
+  {
+    "flowline": "6\" delivery Line (new)",
+    "location": "awoba",
+    "complete_system_failure_indicator": "Flowline at Risk",
+    "preventive_maintenace_plan": "1. Carry out integrity test to determine line condition    2. Replace line based on test result.                             3.  Increase ROW Surveillance             ",
+    "remarks": "Awaiting mangement Approval to fix leaks on pipeline."
+  }
+]

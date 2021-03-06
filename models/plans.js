@@ -50,20 +50,11 @@ const plansSchema = new Schema({
   year: { type: Number, required: true  }
 });
 
-// const Revenue = mongoose.model("Revenue", revenueSchema);
-// const PsVolume = mongoose.model("PsVolume", psVolumeSchema);
-// const opExpens = mongoose.model("OpExpense", opExpensesSchema);
-// const BCRatio = mongoose.model("BCRatio", bcRatiosSchema);
-// const Tax = mongoose.model("Tax", taxesSchema);
+
 const Plan = mongoose.model("Plan", plansSchema);
 
 module.exports = {
   Plan,
-  // Tax,
-  // BCRatio,
-  // opExpens,
-  // Revenue,
-  // PsVolume,
 };
 
 //formulas

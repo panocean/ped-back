@@ -265,6 +265,22 @@ const getBCRatiosByYear = async(req, res, next) => {
     console.log(error);
   }
 }
+
+const getTaxesByYear = async(req, res, next) => {
+  const {year} = req.body
+  try {
+    let plan = await Plan.findOne({ year });
+
+    if (plan.length === 0) {
+      return res.status(404).json({ error: "Plan not found" });
+    }
+   taxes = plan.taxes
+    res.status(200).json(taxes);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   getPlans,
   addYearTax,
@@ -277,5 +293,6 @@ module.exports = {
   getPsVolumeByYear,
   getRevenueByYear,
   getOperatingExepnsesByYear,
-  getBCRatiosByYear
+  getBCRatiosByYear,
+  getTaxesByYear
 };

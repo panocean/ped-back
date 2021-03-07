@@ -52,4 +52,8 @@ router.post("/year/expense", (req, res, next) => {
 router.post("/year/budget", (req, res, next) => {
   Plans.getBCRatiosByYear(req, res, next)
 })
+
+router.post("/year/tax", (req, res, next) => {
+  Plans.getTaxesByYear(req, res, next)
+})
 module.exports = router;

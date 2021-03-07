@@ -4,13 +4,13 @@ const helper = require("../lib/db");
 
 console.log("environments ===", process.env.NODE_ENV )
 
+
 const mongoURI =
   process.env.NODE_ENV === "production"
     ? process.env.MONGO_URI
     : process.env.NODE_ENV === "test"
     ? "mongodb://localhost:27017/pedtest"
-    : "mongodb://localhost:27017/peddev";
-    // : process.env.MONGO_URI_DEV;
+    : process.env.MONGO_URI_DEV;
 
 //create connection
 mongoose

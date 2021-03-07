@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 // const {taxesSchema} = require("./tax")
 
 const psVolumeSchema = new Schema({
-  crude_considerate_cross_production: { Number },
+  crude_condensate_gross_production: { type: Number },
   crude_oil_sales: { type: Number },
   considerate_sales: { type: Number },
   gas_gross_production: { type: Number },

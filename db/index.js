@@ -10,6 +10,7 @@ const mongoURI =
     ? process.env.MONGO_URI
     : process.env.NODE_ENV === "test"
     ? "mongodb://localhost:27017/pedtest"
+    // : "mongodb://localhost:27017/peddev";
     : process.env.MONGO_URI_DEV;
 
 //create connection

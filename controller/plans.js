@@ -1,22 +1,27 @@
+const { redisClient } = require("../db/redis/redis");
 const util = require("util");
 
-const {
-  Plan,
-} = require("../models/plans");
-
-
+const { Plan } = require("../models/plans");
 
 Plan.create = util.promisify(Plan.create);
 Plan.find = util.promisify(Plan.find);
 
 const getPlans = async (req, res, next) => {
   try {
-    let plans = await Plan.find();
-
-    if (plans.length === 0) {
-      return res.status(404).json({ error: "No facility in database" });
+    let redisPlans = await res.locals.plansdata
+    let plansFromDb
+    if (redisPlans === null) {
+      let plans = await Plan.find();
+      if (plans.length === 0) {
+        return res.status(404).json({ error: "No facility in database" });
+      }
+      plansFromDb = plans;
+      redisClient.setex("plansKey", 3600, JSON.stringify(plansFromDb));
     }
-    res.status(200).json(plans);
+    if(redisPlans !== null ) {
+      res.status(200).send(JSON.parse(redisPlans)); 
+    } 
+    else if(plansFromDb) res.status(200).json(plansFromDb);  
   } catch (error) {
     console.log(error);
   }
@@ -137,7 +142,7 @@ const updatePlanByWithRevenue = async (req, res, next) => {
   }
 };
 
-const updatePlanWithOpExpense = async(req, res, next) => {
+const updatePlanWithOpExpense = async (req, res, next) => {
   const { year } = req.body;
 
   try {
@@ -169,9 +174,9 @@ const updatePlanWithOpExpense = async(req, res, next) => {
   } catch (error) {
     res.status(500).send(error.message);
   }
-}
+};
 
-const updatePlanWithBCRatios = async(req, res, next) => {
+const updatePlanWithBCRatios = async (req, res, next) => {
   const { year } = req.body;
 
   try {
@@ -203,83 +208,82 @@ const updatePlanWithBCRatios = async(req, res, next) => {
   } catch (error) {
     res.status(500).send(error.message);
   }
-}
+};
 
-
-const getPsVolumeByYear = async(req, res, next) => {
-  const {year} = req.body
+const getPsVolumeByYear = async (req, res, next) => {
+  const { year } = req.body;
   try {
     let plan = await Plan.findOne({ year });
 
     if (plan.length === 0) {
       return res.status(404).json({ error: "Plan not found" });
     }
-    psVolume = plan.production_sales_volume
+    psVolume = plan.production_sales_volume;
     res.status(200).json(psVolume);
   } catch (error) {
     console.log(error);
   }
-}
+};
 
-const getRevenueByYear = async(req, res, next) => {
-  const {year} = req.body
+const getRevenueByYear = async (req, res, next) => {
+  const { year } = req.body;
   try {
     let plan = await Plan.findOne({ year });
 
     if (plan.length === 0) {
       return res.status(404).json({ error: "Plan not found" });
     }
-    revenue = plan.revenue
+    revenue = plan.revenue;
     res.status(200).json(revenue);
   } catch (error) {
     console.log(error);
   }
-}
+};
 
-const getOperatingExepnsesByYear = async(req, res, next) => {
-  const {year} = req.body
+const getOperatingExepnsesByYear = async (req, res, next) => {
+  const { year } = req.body;
   try {
     let plan = await Plan.findOne({ year });
 
     if (plan.length === 0) {
       return res.status(404).json({ error: "Plan not found" });
     }
-    operating_expenses = plan.operating_expenses
+    operating_expenses = plan.operating_expenses;
     res.status(200).json(operating_expenses);
   } catch (error) {
     console.log(error);
   }
-}
+};
 
-const getBCRatiosByYear = async(req, res, next) => {
-  const {year} = req.body
+const getBCRatiosByYear = async (req, res, next) => {
+  const { year } = req.body;
   try {
     let plan = await Plan.findOne({ year });
 
     if (plan.length === 0) {
       return res.status(404).json({ error: "Plan not found" });
     }
-    budget_cost_ratios = plan.budget_cost_ratios
+    budget_cost_ratios = plan.budget_cost_ratios;
     res.status(200).json(budget_cost_ratios);
   } catch (error) {
     console.log(error);
   }
-}
+};
 
-const getTaxesByYear = async(req, res, next) => {
-  const {year} = req.body
+const getTaxesByYear = async (req, res, next) => {
+  const { year } = req.body;
   try {
     let plan = await Plan.findOne({ year });
 
     if (plan.length === 0) {
       return res.status(404).json({ error: "Plan not found" });
     }
-   taxes = plan.taxes
+    taxes = plan.taxes;
     res.status(200).json(taxes);
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 module.exports = {
   getPlans,
@@ -294,5 +298,5 @@ module.exports = {
   getRevenueByYear,
   getOperatingExepnsesByYear,
   getBCRatiosByYear,
-  getTaxesByYear
+  getTaxesByYear,
 };

@@ -1,6 +1,7 @@
 require("./db");
 require("dotenv").config();
 
+// const redis = require("redis");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -15,6 +16,7 @@ console.log("process", process.env.PORT);
 const indexRouter = require("./routes/index");
 const plansRouter = require("./routes/create");
 const updateRouter = require("./routes/update");
+
 
 const app = express();
 

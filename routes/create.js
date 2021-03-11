@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 const Plans = require("../controller/plans");
+const { plansCache } = require("../db/cache")
 
 
-router.get("/", (req, res, next) => {
+router.get("/", plansCache, (req, res, next) => {
   Plans.getPlans(req, res, next);
 });
 
